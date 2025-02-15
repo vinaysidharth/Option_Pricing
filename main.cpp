@@ -18,11 +18,7 @@ double binomial_option_price(double S, double K, double T, double r, double vol,
          S * pow(u, i) * pow(d, n - i) - K: This calculates the intrinsic value */
     }
 // Backward Induction
-    /*This set of nested loops performs backward induction to calculate the option value at each node
-     *of the binomial tree, working backward from the expiration date to the present.
-
-for (int i = 0; i <= j; i++): This inner loop iterates over the possible states at each time step j. i represents the number of up moves at time step j. Importantly, the maximum value of i is j, because you can't have more up moves than the number of time steps that have elapsed.
-option_values[i] = (p * option_values[i + 1] + (1 - p) * option_values[i]) * exp(-r * dt);: This is the core of the backward induction process. It calculates the option value at a given node (time step j, state i) as the discounted expected value of the option in the next time step:*/
+ 
     for (int j = n - 1; j >= 0; j--) /*loop iterates backward in time, from the time step
         just before expiration (n - 1) down to time 0.
         j represents the time step.*/
