@@ -1,35 +1,11 @@
-# BAPM vs Black-Scholes Model Comparison
+# Comparative Analysis: Binomial Asset Pricing Model vs. Black-Scholes Formula  
 
-This repository provides a comparative analysis of the **Behavioral Asset Pricing Model (BAPM)** and the **Black-Scholes Model** for option pricing. The goal is to highlight key differences, assumptions, and practical applications of both models.
+A study comparing the convergence of the Binomial Asset Pricing Model (BAPM) and the Black-Scholes (BS) formula for pricing European call options.  
 
-## Overview
+## Overview  
+This repository accompanies the paper **"A Comparison of the Binomial Asset Pricing Model and the Black-Scholes Formula in European Call Option Pricing"**. The study:  
+- Implements both models to compute European call option prices.  
+- Analyzes convergence behavior of the Binomial model toward the Black-Scholes solution.  
+- Uses real-world Apple Inc. (AAPL) stock data to compute volatility and validate results.  
 
-### Black-Scholes Model
-- **Purpose**: Prices European-style options using a closed-form solution.
-- **Assumptions**:
-  - Constant volatility and risk-free rate.
-  - No dividends during the option's life.
-  - Log-normal distribution of stock prices.
-  - Efficient markets (no behavioral biases).
-- **Formula**:
-  \[
-  C = S_0 N(d_1) - X e^{-rT} N(d_2)
-  \]
-  Where \( d_1 = \frac{\ln(S_0/X) + (r + \sigma^2/2)T}{\sigma \sqrt{T}} \), \( d_2 = d_1 - \sigma \sqrt{T} \).
-
-### Behavioral Asset Pricing Model (BAPM)
-- **Purpose**: Extends traditional pricing by incorporating investor psychology and market sentiment.
-- **Assumptions**:
-  - Investors exhibit behavioral biases (e.g., overconfidence, herd behavior).
-  - Market prices reflect both rational and irrational behavior.
-  - Volatility is influenced by sentiment shifts.
-
-## Key Differences
-
-| Feature                | Black-Scholes                          | BAPM                                   |
-|------------------------|----------------------------------------|----------------------------------------|
-| **Market Assumption**  | Efficient markets                     | Markets include irrational behavior   |
-| **Volatility**         | Constant                              | Time-varying (behavior-driven)        |
-| **Complexity**         | Simple, closed-form solution          | Complex, requires sentiment analysis  |
-| **Empirical Validity** | Works well in stable markets          | Better in volatile/bubbly markets     |
-| **Use Case**           | Standard options pricing              | Behavioral finance research           |
+**Key Finding**: The Binomial model converges to the Black-Scholes price at **200,000 time steps**.  
